@@ -4,13 +4,7 @@ public class SavingAccount extends Account{
     }
 
     @Override
-    public void printBalance() {
-        System.out.print("Saving account balance: ");
-        super.printBalance();
-    }
-
-    @Override
     public String toString() {
-        return "Saving Account:\n" + super.toString();
+        return "Saving " + super.toString();
     }
 }

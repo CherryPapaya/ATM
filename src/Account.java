@@ -5,10 +5,6 @@ public abstract class Account {
         return this.balance;
     }
 
-    public void printBalance() {
-        System.out.println("$" + this.balance);
-    }
-
     public void initialBalance() {
         this.balance = 10000;
     }
@@ -26,11 +22,6 @@ public abstract class Account {
     }
 
     public String toString(){
-        return """
-                1 - View Balance
-                2 - Withdraw Funds
-                3 - Deposit Funds
-                4 - Exit
-                """;
+        return "account balance: $" + this.balance;
     }
 }

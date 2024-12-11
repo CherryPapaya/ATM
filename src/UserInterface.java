@@ -49,12 +49,14 @@ public class UserInterface {
                 switch (input) {
                     case 1:
                         account = customer.getCheckingAccount();
-                        System.out.print(account);
+                        System.out.println("Checking account:");
+                        optionMenu();
                         System.out.print("Choice: ");
                         break;
                     case 2:
                         account = customer.getSavingAccount();
-                        System.out.print(account);
+                        System.out.println("Saving account:");
+                        optionMenu();
                         System.out.print("Choice: ");
                         break;
                 }
@@ -68,30 +70,37 @@ public class UserInterface {
                 switch (input) {
                     case 1:
                         System.out.println();
-                        account.printBalance();
+                        System.out.println(account);
                         break;
                     case 2:
                         System.out.println();
-                        account.printBalance();
+                        System.out.println(account);
                         System.out.print("Amount to withdraw: ");
                         double withdrawAmount = Double.parseDouble(scanner.nextLine());
                         account.withdraw(withdrawAmount);
 
-                        System.out.print("New ");
-                        account.printBalance();
+                        System.out.println("New " + account);
                         break;
                     case 3:
                         System.out.println();
-                        account.printBalance();
+                        System.out.println(account);
                         System.out.print("Amount to deposit: ");
                         double depositAmount = Double.parseDouble(scanner.nextLine());
                         account.deposit(depositAmount);
 
-                        System.out.print("New ");
-                        account.printBalance();
+                        System.out.println("New " + account);
                         break;
                 }
             }
         }
+    }
+
+    public void optionMenu() {
+        System.out.println("""
+                1 - View Balance
+                2 - Withdraw Funds
+                3 - Deposit Funds
+                4 - Exit
+                """);
     }
 }
