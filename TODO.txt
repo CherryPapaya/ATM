@@ -1,2 +1,0 @@
-- add functionality to make account.
-    - check if account exists.
