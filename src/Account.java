@@ -1,23 +1,36 @@
 public abstract class Account {
     private double balance;
 
-    String getBalance() {
-        return "$" + this.balance;
+    public double getBalance() {
+        return this.balance;
     }
 
-    void initialBalance() {
+    public void printBalance() {
+        System.out.println("$" + this.balance);
+    }
+
+    public void initialBalance() {
         this.balance = 10000;
     }
 
-    void withdraw(double withdrawAmount) {
-        if (withdrawAmount <= this.balance) {
+    public void withdraw(double withdrawAmount) {
+        if (withdrawAmount > this.balance) {
             System.out.println("⚠️Withdraw amount larger than current balance");
         } else {
             this.balance -= withdrawAmount;
         }
     }
 
-    void deposit(double depositAmount) {
+    public void deposit(double depositAmount) {
         this.balance += depositAmount;
+    }
+
+    public String toString(){
+        return """
+                1 - View Balance
+                2 - Withdraw Funds
+                3 - Deposit Funds
+                4 - Exit
+                """;
     }
 }
