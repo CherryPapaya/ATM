@@ -11,7 +11,7 @@ public abstract class Account {
 
     public void withdraw(double withdrawAmount) {
         if (withdrawAmount > this.balance) {
-            System.out.println("⚠️Withdraw amount larger than current balance");
+            System.out.println("⚠️Balance cannot be negative");
         } else {
             this.balance -= withdrawAmount;
         }
